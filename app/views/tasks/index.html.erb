@@ -1,0 +1,17 @@
+<h1 class="m-3">My tasks</h1>
+
+<div class="container mx-4">
+  <ul class="list-group list-group-flush mb-3">
+    <% @tasks.each do |task| %>
+      <li>
+      <%= task.completed ? "✅" : "🟥" %>
+      <%= link_to task.title, "tasks/#{task.id}", style: " text-decoration: none;"%>
+      <%= link_to "🗑️", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="card-body">
+    <button type="button" class="btn btn-primary"><%= link_to "➕ Add new task", new_task_path, style: "color: white; text-decoration: none;" %></button>
+  </div>
+</div>

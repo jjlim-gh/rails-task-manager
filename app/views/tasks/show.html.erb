@@ -1,0 +1,15 @@
+<h2 class="m-3"><%= @task.title %></h2>
+
+<div class="mx-3">
+  <button type="button" class="btn btn-primary"><%= link_to "Edit this task", edit_task_path, style: "color: white; text-decoration: none;" %></button>
+</div>
+
+<div class="card-body">
+  <p><%= @task.details %></p>
+</div>
+
+<h4 class="m-3"><%= @task.completed ? "✅ This task is completed" : "🟥 This is task is not yet completed" %></h4>
+
+<div class="mx-3">
+  <button type="button" class="btn btn-primary"><%= link_to "Back to list...", tasks_path, style: "color: white; text-decoration: none;" %></button>
+</div>
